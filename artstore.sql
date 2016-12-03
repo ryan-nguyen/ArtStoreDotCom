@@ -80,8 +80,9 @@ CREATE TABLE `products` (
   `description` varchar(245) DEFAULT NULL,
   `price` double DEFAULT NULL,
   `img` varchar(45) DEFAULT NULL,
+  `category` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,6 +91,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (1,'Pen','a box of pens',1.49,'http://i.imgur.com/S7UIJIa.png','sketching'),(2,'Notebook','a notebook of paper',5.99,'http://i.imgur.com/B9uRq0a.png','surfaces'),(3,'Pencil',NULL,0.99,'http://i.imgur.com/OCCo9gl.png',NULL),(4,'Paper Pad',NULL,5.99,'http://i.imgur.com/BJupU3s.jpg',NULL),(5,'Paint Brush',NULL,5.99,'http://i.imgur.com/Y3kVE52.jpg',NULL),(6,'Paint',NULL,3.99,'http://i.imgur.com/H5V4IHA.jpg',NULL),(7,'Colored Pencils, 24',NULL,19.99,'http://i.imgur.com/xslUzmy.jpg',NULL),(8,'Eraser',NULL,0.99,'http://i.imgur.com/xslUzmy.jpg',NULL),(9,'Markers, 10',NULL,3.99,'http://i.imgur.com/8iq2uMn.jpg',NULL),(10,'Paper',NULL,3.99,'http://i.imgur.com/07ixINv.jpg',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +112,7 @@ CREATE TABLE `reviews` (
   KEY `review_img_id_idx` (`image_id`),
   CONSTRAINT `review_img_id` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `review_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +121,7 @@ CREATE TABLE `reviews` (
 
 LOCK TABLES `reviews` WRITE;
 /*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
+INSERT INTO `reviews` VALUES (2,1,NULL,'Amazing purchase! Writes well on notebook paper. Perfect for taking notes!');
 /*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,9 +138,9 @@ CREATE TABLE `users` (
   `last_name` varchar(45) DEFAULT NULL,
   `address` varchar(256) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `card_number` varchar(45) DEFAULT NULL,
+  `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +149,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'bob','bob','123 bob street','bob@gmail.com','password'),(2,'bob2','bob2','234 bob street','bob2@gmail.com','password2'),(3,'bob2','bob2','234 bob street','bob2@gmail.com','password2');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +162,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-07 14:35:30
+-- Dump completed on 2016-11-28 17:49:43
