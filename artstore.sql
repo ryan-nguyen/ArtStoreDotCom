@@ -91,7 +91,21 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Pen','a box of pens',1.49,'http://i.imgur.com/S7UIJIa.png','sketching'),(2,'Notebook','a notebook of paper',5.99,'http://i.imgur.com/B9uRq0a.png','surfaces'),(3,'Pencil',NULL,0.99,'http://i.imgur.com/OCCo9gl.png',NULL),(4,'Paper Pad',NULL,5.99,'http://i.imgur.com/BJupU3s.jpg',NULL),(5,'Paint Brush',NULL,5.99,'http://i.imgur.com/Y3kVE52.jpg',NULL),(6,'Paint',NULL,3.99,'http://i.imgur.com/H5V4IHA.jpg',NULL),(7,'Colored Pencils, 24',NULL,19.99,'http://i.imgur.com/xslUzmy.jpg',NULL),(8,'Eraser',NULL,0.99,'http://i.imgur.com/xslUzmy.jpg',NULL),(9,'Markers, 10',NULL,3.99,'http://i.imgur.com/8iq2uMn.jpg',NULL),(10,'Paper',NULL,3.99,'http://i.imgur.com/07ixINv.jpg',NULL);
+INSERT INTO `products` VALUES (1,'Pen','A 15 pack of BIC pens.',1.49,'http://i.imgur.com/QdIzFgh.jpg','sketching');
+INSERT INTO `products` VALUES (2,'Pencil','A 24 pack of standard #2 Ticonderoga pencils.',2.99,'http://i.imgur.com/vzvhjmf.jpg','sketching');
+INSERT INTO `products` VALUES (3,'Colored Pencils','A 24 pack of pre-sharpened Crayola colored pencils',4.99,'http://i.imgur.com/xslUzmy.jpg','sketching');
+INSERT INTO `products` VALUES (4,'Markers','A 10 pack of Crayola markers with classic colors.',3.99,'http://i.imgur.com/8iq2uMn.jpg','sketching');
+INSERT INTO `products` VALUES (5,'Crayons','A 24 pack of Crayola crayons with standard colors.',1.99,'http://i.imgur.com/ORVTpRG.jpg','sketching');
+INSERT INTO `products` VALUES (6,'Paint Brush','7 different paint brushes that will cover a large variety of your painting needs.',9.99,'http://i.imgur.com/Y3kVE52.jpg','painting');
+INSERT INTO `products` VALUES (7,'Paint Palette','A medium sized paint palette that can hold several different colors.',6.99,'http://i.imgur.com/c3rCRyZ.jpg','painting');
+INSERT INTO `products` VALUES (8,'Oil Paints','A 24 pack of a variety of oil paints that will allow you to achieve any color you need.',19.99,'http://i.imgur.com/3l8Wnfv.jpg','painting');
+INSERT INTO `products` VALUES (9,'Acrylic Paints','5 of your most basic acrylic paint colors.',9.99,'http://i.imgur.com/9Pa3B02.jpg','painting');
+INSERT INTO `products` VALUES (10,'Finger Paints','10 different colors that make finger painting easy.',9.99,'http://i.imgur.com/9Pa3B02.jpg','painting');
+INSERT INTO `products` VALUES (11,'Paper','200 sheets of lined notebook paper for your basic sketching needs.',3.99,'http://i.imgur.com/07ixINv.jpg','surfaces');
+INSERT INTO `products` VALUES (12,'Notebook','A notebook of paper so you can sketch on the go.',5.99,'http://i.imgur.com/8ohA2wz.jpg','surfaces');
+INSERT INTO `products` VALUES (13,'Canvas','A medium sized canvas for you to paint on with some of your recently purchased paints. Does not come with the easel.',9.99,'http://i.imgur.com/4UjNuGi.jpg','surfaces');
+INSERT INTO `products` VALUES (14,'Easel','An easel to hold your canvases for you while you paint',39.99,'http://i.imgur.com/jzA5hle.jpg','surfaces');
+INSERT INTO `products` VALUES (15,'Tile','A 7 inch by 7 inch tile for small painting projects.',2.99,'http://i.imgur.com/uVW5pen.jpg','surfaces');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
