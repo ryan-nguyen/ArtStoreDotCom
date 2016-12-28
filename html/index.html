@@ -1,1 +1,76 @@
-HTML GOES HERE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ART STORE DOT COM</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/logout.js"></script>
+    
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet" />
+    <link href="css/index.css" type="text/css" rel="stylesheet" />
+</head>
+    
+<body>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> ARTSTOREDOTCOM</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+        	<li><a href="user.html" id="userButton"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+            <li><a href="login.html" id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="#" id="logoutButton"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            <li><a href="cart.html" id="cartButton"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        <span id="search_concept">All Categories</span> <span class="caret"></span>
+                    </button>
+                    <ul id="categoryDropdown" class="dropdown-menu" role="menu">
+                    	<li><a href="#AllCategories">All Categories</a></li>
+                        <li><a href="#Sketching">Sketching</a></li>
+                        <li><a href="#Painting">Painting</a></li>
+                        <li><a href="#Surfaces">Surfaces</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">
+				<div class="ui-widget">
+  					<input id="searchBar" type="text" class="form-control" name="x" placeholder="Search...">
+				</div>
+                <span class="input-group-btn">
+                    <button id="searchButton" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="container text-center" id="productContainer"></div>
+
+</body>
+</html>
