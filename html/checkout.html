@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ART STORE DOT COM</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--bootstrap CDN-->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<script src="scripts/jquery.js"></script>
+<script src="scripts/checkout.js"></script>
+<script src="scripts/logout.js"></script>
+</head>
+
+<body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> ARTSTOREDOTCOM</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="user.html" id="userButton"><span
+							class="glyphicon glyphicon-user"></span> My Profile</a></li>
+					<li><a href="login.html" id="loginButton"><span
+							class="glyphicon glyphicon-log-in"></span> Login</a></li>
+					<li><a href="index.html" id="logoutButton"><span
+							class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+					<li><a href="cart.html" id="cartButton"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">Credit card Information</div>
+						<div class="panel-body">
+							<div class="form-group" id="cardNumberDiv">
+								<label for="cc">Credit Card Number:</label> <input type="text"
+									class="form-control" id="cardNumber">
+							</div>
+							<div class="form-group" id="cardNameDiv">
+								<label for="cc">Name on Card:</label> <input type="text"
+									class="form-control" id="cardName">
+							</div>
+							<div class="form-group" id="securityCodeDiv">
+								<label for="cc">Security Code:</label> <input type="text"
+									class="form-control" id="securityCode">
+							</div>
+							<div class="form-group" id="expirationDiv">
+								<label for="cc">Expiration Date: (MM/YYYY)</label> <input
+									type="text" class="form-control" id="expiration">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">Review Shipping Information</div>
+						<div class="panel-body">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="fname">First
+										name:</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="fname">fname</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="lname">Last
+										Name:</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="lname">lname</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="address">Street
+										Address:</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="address">address</p>
+									</div>
+								</div>
+								<a href="history.html" id="checkoutButton" class="btn btn-primary">Checkout</a>
+								<a href="cart.html" class="btn btn-danger">Cancel</a>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6" id="myAlert">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">Total</div>
+						<div class="panel-body">
+							<form class="form-horizontal">
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="subtotal">SubTotal:
+									</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="subtotal">$0.00</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="shipping">Shipping:
+									</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="shipping">$5.00</p>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="tax">Tax:
+									</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="tax">$0.00</p>
+									</div>
+								</div>
+								<hr>
+								<div class="form-group">
+									<label class="form-control-label col-sm-4" for="total">Total:
+									</label>
+									<div class="col-sm-8">
+										<p class="form-control-static" id="total">$0.00</p>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+
+</body>
+</html>
