@@ -1,2 +1,2 @@
 # ArtStoreDotCom
-Final Project for Web Programming (CSCI 4300)
+The Artstore Website is a website designed to allow users to login and purchase items that are dynamically displayed on the home page and filtered by the search bar and category selectors. Item and user information including their registered info and cart information are stored into a local database. The website tracks sessions through cookies to grab data from the MySQL database.
