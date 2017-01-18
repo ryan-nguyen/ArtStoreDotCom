@@ -11,7 +11,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
-    <link href="index.css" type="text/css" rel="stylesheet" />
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/product.js"></script>
+    <script src="scripts/logout.js"></script>
+    
+    <link href="css/index.css" type="text/css" rel="stylesheet" />
 </head>
     
 <body>
@@ -23,71 +27,31 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ARTSTOREDOTCOM</a>
+            <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-home"></span> ARTSTOREDOTCOM</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            	<li><a href="user.html" id="userButton"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+                <li><a href="login.html" id="loginButton"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="#" id="logoutButton"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="cart.html" id="cartButton"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
             </ul>
         </div>
     </div>
 </nav>
-    
-<div class="container">
-    <div class="page-header" id="header">
-        <h1>PRODUCT NAME</h1>
-        <h5>$$$$$</h5>
-    </div>
-</div>
-    
-<div class="container">
-    <div class="media">
-        <div class="media-left media-top">
-            <a href="#">
-                <img class="media-object" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTU4NzMwZWFiMzUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTg3MzBlYWIzNSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+" atl="thumbnail">
-            </a>
-        </div>
-        <div class="media-body" id="mediabody">
-            <h3>Header</h3>
-            <p>info....</p>
-        </div>
-    </div>
-</div>
 
-<div id="reviewTabs" class="container">
-    <h2>REVIEWS</h2>
-    <ul class="nav nav-tabs">
-        <li class="active">
-            <a href="#1" data-toggle="tab">User Reviews</a>
-        </li>
-        <li>
-            <a href="#2" data-toggle="tab">Add a Review</a>
-        </li>
-    </ul>
-    
-    <div class="tab-content">
-        <div class="tab-pane active" id="1">
-            <div class="well">
-                <h4>USER</h4>
-                <p>Review</p>
-            </div>
-            <div class="well">
-                <h4>USER</h4>
-                <p>Review</p>
-            </div>
-        </div>
-        
-        <div class="tab-pane" id="2">
-            <textarea id="reviewMessage" cols="50" rows="10">Review message</textarea><br>
-            <a href="#" class="btn btn-success btn-lg" role="button">Submit</a>
+<div class="container">
+<div class="jumbotron" id="content">
+    <div class="media">
+        <div class="media-left media-top" id="productImage"></div>
+        <div class="media-body" id="productbody">
+            <h3 class="media-heading" id="productName"><em></em></h3>
+            <h2 class="media-heading" id="productPrice"></h2><br>
+            <p id="productDescription"></p>
+            <p  id="addtocartButton" ><button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart</button></p>
         </div>
     </div>
+</div>
 </div>
     
 </body>
