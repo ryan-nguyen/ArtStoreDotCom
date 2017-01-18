@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.15, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: artstore
 -- ------------------------------------------------------
--- Server version	5.7.15-log
+-- Server version	5.7.15
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -42,29 +42,31 @@ LOCK TABLES `cart` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `images`
+-- Table structure for table `history`
 --
 
-DROP TABLE IF EXISTS `images`;
+DROP TABLE IF EXISTS `history`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `img` varchar(45) DEFAULT NULL,
+CREATE TABLE `history` (
   `user_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_img_id_idx` (`user_id`),
-  CONSTRAINT `user_img_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  `product_id` int(11) DEFAULT NULL,
+  `purchase_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  KEY `user_id` (`user_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `history_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `history_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `images`
+-- Dumping data for table `history`
 --
 
-LOCK TABLES `images` WRITE;
-/*!40000 ALTER TABLE `images` DISABLE KEYS */;
-/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+LOCK TABLES `history` WRITE;
+/*!40000 ALTER TABLE `history` DISABLE KEYS */;
+INSERT INTO `history` VALUES (5,3,'2016-12-06 15:06:11'),(5,1,'2016-12-06 15:06:11');
+/*!40000 ALTER TABLE `history` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -82,7 +84,7 @@ CREATE TABLE `products` (
   `img` varchar(45) DEFAULT NULL,
   `category` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,52 +93,8 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'Pen','A 15 pack of BIC pens.',1.49,'http://i.imgur.com/QdIzFgh.jpg','sketching');
-INSERT INTO `products` VALUES (2,'Pencil','A 24 pack of standard #2 Ticonderoga pencils.',2.99,'http://i.imgur.com/vzvhjmf.jpg','sketching');
-INSERT INTO `products` VALUES (3,'Colored Pencils','A 24 pack of pre-sharpened Crayola colored pencils',4.99,'http://i.imgur.com/xslUzmy.jpg','sketching');
-INSERT INTO `products` VALUES (4,'Markers','A 10 pack of Crayola markers with classic colors.',3.99,'http://i.imgur.com/8iq2uMn.jpg','sketching');
-INSERT INTO `products` VALUES (5,'Crayons','A 24 pack of Crayola crayons with standard colors.',1.99,'http://i.imgur.com/ORVTpRG.jpg','sketching');
-INSERT INTO `products` VALUES (6,'Paint Brush','7 different paint brushes that will cover a large variety of your painting needs.',9.99,'http://i.imgur.com/Y3kVE52.jpg','painting');
-INSERT INTO `products` VALUES (7,'Paint Palette','A medium sized paint palette that can hold several different colors.',6.99,'http://i.imgur.com/c3rCRyZ.jpg','painting');
-INSERT INTO `products` VALUES (8,'Oil Paints','A 24 pack of a variety of oil paints that will allow you to achieve any color you need.',19.99,'http://i.imgur.com/3l8Wnfv.jpg','painting');
-INSERT INTO `products` VALUES (9,'Acrylic Paints','5 of your most basic acrylic paint colors.',9.99,'http://i.imgur.com/9Pa3B02.jpg','painting');
-INSERT INTO `products` VALUES (10,'Finger Paints','10 different colors that make finger painting easy.',9.99,'http://i.imgur.com/9Pa3B02.jpg','painting');
-INSERT INTO `products` VALUES (11,'Paper','200 sheets of lined notebook paper for your basic sketching needs.',3.99,'http://i.imgur.com/07ixINv.jpg','surfaces');
-INSERT INTO `products` VALUES (12,'Notebook','A notebook of paper so you can sketch on the go.',5.99,'http://i.imgur.com/8ohA2wz.jpg','surfaces');
-INSERT INTO `products` VALUES (13,'Canvas','A medium sized canvas for you to paint on with some of your recently purchased paints. Does not come with the easel.',9.99,'http://i.imgur.com/4UjNuGi.jpg','surfaces');
-INSERT INTO `products` VALUES (14,'Easel','An easel to hold your canvases for you while you paint',39.99,'http://i.imgur.com/jzA5hle.jpg','surfaces');
-INSERT INTO `products` VALUES (15,'Tile','A 7 inch by 7 inch tile for small painting projects.',2.99,'http://i.imgur.com/uVW5pen.jpg','surfaces');
+INSERT INTO `products` VALUES (1,'Pen','A 15 pack of BIC pens.',1.49,'http://i.imgur.com/QdIzFgh.jpg','sketching'),(2,'Pencil','A 24 pack of standard #2 Ticonderoga pencils.',2.99,'http://i.imgur.com/vzvhjmf.jpg','sketching'),(3,'Colored Pencils','A 24 pack of pre-sharpened Crayola colored pencils',4.99,'http://i.imgur.com/xslUzmy.jpg','sketching'),(4,'Markers','A 10 pack of Crayola markers with classic colors.',3.99,'http://i.imgur.com/8iq2uMn.jpg','sketching'),(5,'Crayons','A 24 pack of Crayola crayons with standard colors.',1.99,'http://i.imgur.com/ORVTpRG.jpg','sketching'),(6,'Paint Brush','7 different paint brushes that will cover a large variety of your painting needs.',9.99,'http://i.imgur.com/Y3kVE52.jpg','painting'),(7,'Paint Palette','A medium sized paint palette that can hold several different colors.',6.99,'http://i.imgur.com/c3rCRyZ.jpg','painting'),(8,'Oil Paints','A 24 pack of a variety of oil paints that will allow you to achieve any color you need.',19.99,'http://i.imgur.com/3l8Wnfv.jpg','painting'),(9,'Acrylic Paints','5 of your most basic acrylic paint colors.',9.99,'http://i.imgur.com/9Pa3B02.jpg','painting'),(10,'Finger Paints','10 different colors that make finger painting easy.',9.99,'http://i.imgur.com/FqaYiGq.jpg','painting'),(11,'Paper','200 sheets of lined notebook paper for your basic sketching needs.',3.99,'http://i.imgur.com/07ixINv.jpg','surfaces'),(12,'Notebook','A notebook of paper so you can sketch on the go.',5.99,'http://i.imgur.com/8ohA2wz.jpg','surfaces'),(13,'Canvas','A medium sized canvas for you to paint on with some of your recently purchased paints. Does not come with the easel.',9.99,'http://i.imgur.com/4UjNuGi.jpg','surfaces'),(14,'Easel','An easel to hold your canvases for you while you paint',39.99,'http://i.imgur.com/jzA5hle.jpg','surfaces'),(15,'Tile','A 7 inch by 7 inch tile for small painting projects.',2.99,'http://i.imgur.com/uVW5pen.jpg','surfaces');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `reviews`
---
-
-DROP TABLE IF EXISTS `reviews`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `reviews` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) DEFAULT NULL,
-  `image_id` int(11) DEFAULT NULL,
-  `review` varchar(256) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `review_product_id_idx` (`product_id`),
-  KEY `review_img_id_idx` (`image_id`),
-  CONSTRAINT `review_img_id` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `review_product_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `reviews`
---
-
-LOCK TABLES `reviews` WRITE;
-/*!40000 ALTER TABLE `reviews` DISABLE KEYS */;
-INSERT INTO `reviews` VALUES (2,1,NULL,'Amazing purchase! Writes well on notebook paper. Perfect for taking notes!');
-/*!40000 ALTER TABLE `reviews` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -154,7 +112,7 @@ CREATE TABLE `users` (
   `email` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +121,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'bob','bob','123 bob street','bob@gmail.com','password'),(2,'bob2','bob2','234 bob street','bob2@gmail.com','password2'),(3,'bob2','bob2','234 bob street','bob2@gmail.com','password2');
+INSERT INTO `users` VALUES (5,'james','sides','calebs address','calebsides@gmail.com','password');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -176,4 +134,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-28 17:49:43
+-- Dump completed on 2016-12-08 12:28:52
