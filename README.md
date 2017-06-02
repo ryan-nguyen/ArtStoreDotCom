@@ -1,2 +1,2 @@
 # ArtStoreDotCom
-Final Project for Web Programming (CSCI 4300)
+E-Commerce site for art supplies
